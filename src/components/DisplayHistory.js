@@ -7,7 +7,7 @@ const DisplayHistory = ()=>{
 
     return(
         <div>
-            {JSON.stringify(history)}
+            {/* {JSON.stringify(history)} */}
             <h1>Search History</h1>
             {
                 history.map((h)=><p>{h.word}</p>)  
