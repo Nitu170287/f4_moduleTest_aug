@@ -1,5 +1,4 @@
-
-*{
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -7,28 +6,64 @@
 
 
 
-.nav{
-  
+.nav {
+
   padding: 10px 40px;
-  color:white;
+  color: white;
   background-color: black;
- 
+
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
-.navlink a{
+
+.navlink a {
   text-decoration: none;
   color: white;
   margin: 10px;
 }
-.searchbar{
+
+.searchbar {
   display: flex;
   padding: 20px;
- border: 2px solid red;
+
   justify-content: center;
 }
-.searchinput{
+
+.searchbar input{
   
   padding: 10px;
+  width:20%;
+}
+.searchbar button{
+  padding: 10px;
+  color:white;
+  background-color: black;
+  width:7%;
+  font-size: 1rem;
+}
+
+@media screen and (max-width: 768px){
+  .searchbar input{
+    
+    width:50%;
+  }
+  .searchbar button{
+    
+    
+    width:12%;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (min-width: 768px ) and (max-width:1200px){
+  .searchbar input{
+    
+    width:30%;
+  }
+  .searchbar button{
+    
+    
+    width:10%;
+    font-size: 0.9rem;
+  }
 }
