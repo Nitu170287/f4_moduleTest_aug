@@ -1,19 +1,20 @@
-import React from "react"
-import {  useSelector } from "react-redux";
+import React from "react";
+import { useSelector } from "react-redux";
 
-const DisplayHistory = ()=>{
+const DisplayHistory = () => {
+  const history = useSelector((state) => state.history);
 
-    const history = useSelector((state)=> state.history)
-
-    return(
+  return (
+    <div>
+      {/* {JSON.stringify(history)} */}
+      <h1>Search History</h1>
+      {history.map((h) => (
         <div>
-            {/* {JSON.stringify(history)} */}
-            <h1>Search History</h1>
-            {
-                history.map((h)=><p>{h.word}</p>)  
-            }
+          <a href={"/word"}>{h.word}</a>
         </div>
-    )
-}
+      ))}
+    </div>
+  );
+};
 
-export default DisplayHistory
+export default DisplayHistory;

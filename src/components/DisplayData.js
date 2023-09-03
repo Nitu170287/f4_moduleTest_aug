@@ -1,29 +1,31 @@
 
 
-const DisplayData = ({wordDefinetion})=>{
+const DisplayData = ({ wordDefinetion }) => {
+  
 
-
-    return(
-        <div>
-        <h2>{wordDefinetion.word}</h2>
-        <p>{wordDefinetion.phonetic}</p>
-          {wordDefinetion.phonetics.map((p)=><>
-            
-            <audio controls>
+  return (
+    <div>
+      <h2>{wordDefinetion.word}</h2>
+      <p>{wordDefinetion.phonetic}</p>
+      {wordDefinetion.phonetics && wordDefinetion.phonetics.map((p) => (
+        <>
+          <audio controls>
             <source src={p.audio} type="audio/mp3" />
-            </audio>
-            <p>{p.text}</p>
-          </>)}
+          </audio>
+          <p>{p.text}</p>
+        </>
+      ))}
 
-          {
-            wordDefinetion.meanings.map((meaning)=><>
-                <h3>{meaning.partOfSpeech}</h3>
-                {meaning.definitions.map((d)=><p>{d.definition}</p>)}
-            </>)
-          }
+      {wordDefinetion.meanings && wordDefinetion.meanings.map((meaning) => (
+        <>
+          <h3>{meaning.partOfSpeech}</h3>
+          {meaning.definitions  && meaning.definitions.map((d) => (
+            <p>{d.definition}</p>
+          ))}
+        </>
+      ))}
+    </div>
+  );
+};
 
-        </div>
-    )
-}
-
-export default DisplayData
+export default DisplayData;
