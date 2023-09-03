@@ -20,7 +20,7 @@ const Home = () => {
       .get(`https://api.dictionaryapi.dev/api/v2/entries/en/${inputSearch}`)
       .then((response) => {
         dispatch(dataSuccess(response.data));
-        console.log(response.data);
+        
       })
       .catch((error) => dispatch(dataError(error.message)));
   }

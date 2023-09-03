@@ -9,16 +9,19 @@ const HistoryWord = () => {
   const history = useSelector((state) => state.history);
   const [wordHistory, setWordHistory] = useState({});
 
-  //   useEffect(() => {
-  //     console.log(history);
-  //     setWordHistory(history.find((h) => h.word === w));
-  //     console.log(wordHistory);
-  //   }, [w, history]);
+    useEffect(() => {
+      
+      setWordHistory(history.find((h) => h.word === w));
+     
+    }, [w, history]);
 
   return (
     <div>
-      {JSON.stringify(history)}
-      {/* <DisplayData wordDefinetion={wordHistory} /> */}
+      {/* {JSON.stringify(history)} */}
+      {
+        history.length > 0 ? <DisplayData wordDefinetion={wordHistory} /> : null
+      }
+      
     </div>
   );
 };

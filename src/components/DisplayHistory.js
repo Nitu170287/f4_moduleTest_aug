@@ -1,5 +1,6 @@
 import React from "react";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 
 const DisplayHistory = () => {
   const history = useSelector((state) => state.history);
@@ -8,9 +9,10 @@ const DisplayHistory = () => {
     <div>
       {/* {JSON.stringify(history)} */}
       <h1>Search History</h1>
-      {history.map((h) => (
-        <div>
-          <a href={"/word"}>{h.word}</a>
+      {[].concat(history).map((h,ind) => (
+        <div key={"h-"+ind}>
+        <Link to={"/word/"+h.word}>{h.word}</Link>
+          
         </div>
       ))}
     </div>
